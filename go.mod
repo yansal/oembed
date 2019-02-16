@@ -1,3 +1,4 @@
+// +heroku install ./cmd/web
 module github.com/yansal/oembed
 
 go 1.12
