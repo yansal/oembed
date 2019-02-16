@@ -57,5 +57,8 @@ func extractHTML(data oembed.Data) (template.HTML, error) {
 	if data.HTML != "" {
 		return template.HTML(data.HTML), nil
 	}
+	if data.Type == "photo" && data.URL != "" {
+		return template.HTML(`<img src="` + data.URL + `">`), nil
+	}
 	return "", fmt.Errorf("don't know what to do with data %+v", data)
 }
